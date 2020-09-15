@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  app:
+    image: php:7.3-fpm
+    container_name: app
+    working_dir: /var/www/backend
+    volumes:
+      - ./src/backend:/var/www/backend
+    networks:
+      - app-network
+
+  server:
+    image: nginx:1.19
+    container_name: server
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./src/backend:/var/www/backend
+      - ./deploy/nginx/conf.d/app.conf:/etc/nginx/conf.d/app.conf
+    networks:
+      - app-network
+
+  db:
+    image: mariadb:10
+    container_name: db
+    ports:
+      - 3306:3306
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - .env
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver: local
