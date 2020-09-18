@@ -34,11 +34,7 @@ RUN chmod +x /wait-for-it.sh
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
 
-#
-## Fix permissions
-#RUN chown :www-data . -R
-
-COPY --chown=www-data:www-data . /var/www/backend
+COPY --chown=:www-data . /var/www/backend
 
 EXPOSE 9000
 

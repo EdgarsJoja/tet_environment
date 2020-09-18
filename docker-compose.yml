@@ -9,6 +9,7 @@ services:
     image: php:7.3-fpm
     container_name: app
     working_dir: /var/www/backend
+    user: 1000:1000
     volumes:
       - ./src/backend:/var/www/backend
     networks:
