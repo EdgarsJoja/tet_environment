@@ -45,12 +45,12 @@ services:
       dockerfile: Dockerfile
     image: node:14
     container_name: node
+    user: node
     ports:
       - 4200:4200
     working_dir: /var/www/frontend
     volumes:
       - ./src/frontend:/var/www/frontend
-      - /var/www/frontend/node_modules
     networks:
       - app-network
 
