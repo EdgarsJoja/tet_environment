@@ -36,7 +36,12 @@ Tip: Check _Makefile_ for useful shortcuts:
 - `make stop` - stops all running docker compose containers
 - `make logs` - shows logs from all running containers
 
-### Automated (todo)
+### Automated (recommended)
+
+- Clone this repository:\
+`git clone git@github.com:EdgarsJoja/tet_environment.git`
+- Run setup bash script _setup.sh_:\
+`sh setup.sh`
 
 ### Manual
 
