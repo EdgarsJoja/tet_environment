@@ -2,6 +2,12 @@ TET Euro exchange rates app
 ---
 App for reading & displaying RSS feed with the latest euro exchange rates information.
 
+This app consists of 3 repositories:
+1) This repository, which is responsible for docker environment.
+2) Backend repository, storing source code of BE API service (Laravel), 
+which will be consumed by FE app. Check its readme for more info on API endpoints.
+3) Frontend repository (Angular)
+
 Before you start
 ---
 

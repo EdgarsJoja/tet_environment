@@ -63,6 +63,8 @@ services:
     volumes:
       - ./deploy/ofelia/config.ini:/etc/ofelia/config.ini
       - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - app-network
 
 networks:
   app-network:
