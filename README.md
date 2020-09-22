@@ -42,6 +42,14 @@ Tip: Check _Makefile_ for useful shortcuts:
 `git clone git@github.com:EdgarsJoja/tet_environment.git`
 - Run setup bash script _setup.sh_:\
 `sh setup.sh`
+- Check your browser. Frontend app should be accessible from 
+`http://localhost:4200` and backend from `http://localhost`.
+- Database connection details:\
+  **host:** localhost\
+  **port:** 3306\
+  **user:** root\
+  **password:** tet_root
+- All done!
 
 ### Manual
 
