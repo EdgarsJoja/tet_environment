@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     command: ["/wait-for-it.sh", "db:3306", "--", "/start.sh"]
     image: php:7.3-fpm
+    container_name: tet_app
     working_dir: /var/www/backend
     user: 1000:1000
     volumes:
@@ -16,6 +17,7 @@ services:
 
   server:
     image: nginx:1.19
+    container_name: tet_server
     ports:
       - 80:80
       - 443:443
@@ -27,6 +29,7 @@ services:
 
   db:
     image: mariadb:10
+    container_name: tet_db
     ports:
       - 3306:3306
     volumes:
@@ -41,6 +44,7 @@ services:
       context: ./src/frontend
       dockerfile: Dockerfile
     image: node:14
+    container_name: tet_node
     user: node
     ports:
       - 4200:4200
@@ -52,6 +56,7 @@ services:
 
   cron:
     image: mcuadros/ofelia:latest
+    container_name: tet_cron
     depends_on:
       - app
     command: daemon --config=/etc/ofelia/config.ini
